@@ -1,4 +1,4 @@
-import Directory from "../../../component/directory/directory.component"
+import Directory from "../../component/directory/directory.component"
 
 
 const Home = () => { 
@@ -31,7 +31,7 @@ const Home = () => {
   ]
 
   return (
-    <div>
+    <div>        
         <Directory categories={categories} /> 
     </div>
   )

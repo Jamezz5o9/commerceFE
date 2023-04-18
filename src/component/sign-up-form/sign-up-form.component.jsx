@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./sign-up-form.styles.scss"
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth  } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
 
 const defaultFormFields = { 
   displayName : "",
@@ -41,13 +42,12 @@ const SignUpForm = () => {
     } 
     catch(error){     
       if(error.code === "auth/email-already-in-use"){
-        console.log("Email already exist")
+        alert("Email already exist")
       } else{
         alert("User creation encounter an error", error)        
       }
       
-    }   
-
+    }
     
   } 
 
@@ -96,7 +96,7 @@ const SignUpForm = () => {
           value={confirmPassword}
           required
         />          
-          <button type='submit'>Submit Button</button> 
+        <Button type='submit'>Sign up</Button> 
       </form>
    </div>
   )
